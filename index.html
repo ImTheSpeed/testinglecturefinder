@@ -53,7 +53,9 @@
             text-align: center;
             margin-top: 1rem;
             font-family: 'Verdana', sans-serif;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        body.dark-mode .result {
+            color: white;
         }
         .color-list {
             display: flex;
@@ -192,7 +194,8 @@
                 colorList[i].innerText = translationsArray[i];
             }
 
-            document.body.style.direction = currentLang === 'ar' ? 'rtl' : 'ltr';
+            document.getElementById("title").style.direction = currentLang === 'ar' ? 'rtl' : 'ltr';
+document.getElementById("subtitle").style.direction = currentLang === 'ar' ? 'rtl' : 'ltr';
             this.innerText = currentLang === 'en' ? 'Arabic' : 'English';
         });
     </script>
