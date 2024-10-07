@@ -14,27 +14,27 @@ function findLocation() {
         },
         'CRI122': {
             en: 'Human Sciences Floor 1 Room 22',
-            ar: 'علوم إنسانية الطابق 1 الغرفة 22'
+            ar: 'علوم إنسانية الدور 1 الغرفة 22'
         },
         'CRI242': {
             en: 'Human Sciences Floor 2 Room 42',
-            ar: 'علوم إنسانية الطابق 2 الغرفة 42'
+            ar: 'علوم إنسانية الدور 2 الغرفة 42'
         },
         'CRI246': {
             en: 'Human Sciences Floor 2 Room 46',
-            ar: 'علوم إنسانية الطابق 2 الغرفة 46'
+            ar: 'علوم إنسانية الدور 2 الغرفة 46'
         },
         'GCR201': {
             en: 'Pharmacy Floor 2 Room 01',
-            ar: 'صيدلة الطابق 2 الغرفة 01'
+            ar: 'صيدلة الدور 2 الغرفة 01'
         },
         'GCR301': {
             en: 'Pharmacy Floor 3 Room 01',
-            ar: 'صيدلة الطابق 3 الغرفة 01'
+            ar: 'صيدلة الدور 3 الغرفة 01'
         },
         'GLH001': {
             en: 'Pharmacy Lecture Hall Ground Floor Room 001',
-            ar: 'صيدلة قاعة المحاضرات الطابق الأرضي الغرفة 001'
+            ar: 'صيدلة قاعة المحاضرات الدور الأرضي الغرفة 001'
         }
     };
 
@@ -110,11 +110,11 @@ function findLocation() {
             },
             'I': {
                 en: 'Social and Human Sciences',
-                ar: 'علوم اجتماعية وإنسانية'
+                ar: 'علوم إنسانية'
             },
             'J': {
                 en: 'Media Production',
-                ar: 'إنتاج وسائل الإعلام'
+                ar: 'اعلام'
             },
             'K': {
                 en: 'Food Industries',
@@ -122,7 +122,7 @@ function findLocation() {
             },
             'L': {
                 en: 'Art and Design',
-                ar: 'فن وتصميم'
+                ar: 'فنون'
             },
             'N': {
                 en: 'Engineering',
@@ -152,16 +152,16 @@ function findLocation() {
             }
             if (floor) {
                 if (floor === "G") {
-                    result += lang === 'en' ? `, Ground floor` : `, الطابق الأرضي`;
+                    result += lang === 'en' ? `, Ground floor` : `, الدور الأرضي`;
                 } else {
-                    result += lang === 'en' ? `, ${floor}th floor` : `, الطابق ${floor}`;
+                    result += lang === 'en' ? `, ${floor}th floor` : `, الدور ${floor}`;
                 }
             }
             if (room) {
                 result += lang === 'en' ? `, Room ${room}` : `, الغرفة ${room}`;
             }
         } else {
-            result = currentLang === 'en' ? "Invalid code, please try again!" : "رمز غير صالح، يرجى المحاولة مرة أخرى!";
+            result = currentLang === 'en' ? "Use Your Brain Powers and Write the ROOM code right" : "متاكد من الكود ده ؟ اتمني تراجعه تاني و تتأكد انك كاتب كود الغرفه مش المحاضره";
         }
     }
 
