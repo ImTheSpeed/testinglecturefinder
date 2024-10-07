@@ -71,7 +71,7 @@
         }
         .lang-dark-mode-buttons {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between; /* Keep buttons from moving */
             width: 100%;
             margin-bottom: 1.5rem;
         }
@@ -79,20 +79,20 @@
 </head>
 <body class="flex flex-col items-center justify-center min-h-screen text-black">
     <div class="w-full max-w-2xl p-4">
-        <div class="flex flex-col items-center mb-4">
+        <div class="flex flex-col items-center mb-8">
             <div class="title" id="title">SPEED & Ali's Lecture Room Finder</div>
             <div class="subtitle" id="subtitle">Got Room code and don't know where it is? Write the code down there with [Try with Spaces ( J 301 ) or with no Spaces ( J301)] and let the magic happen.</div>
             <img src="https://www.egyptianeducation.com/ImageHandler.ashx?Id=14525&SS=ceddd09c14cae84267b064642c315f8b" alt="University Logo" class="h-20">
-
-            <!-- Language and Dark Mode Toggle Buttons Under Logo -->
-            <div class="lang-dark-mode-buttons">
-                <button id="langToggle" class="find-lec-button p-2 rounded">Arabic</button>
-                <button id="darkModeToggle" class="find-lec-button p-2 rounded">Dark Mode</button>
-            </div>
         </div>
 
-        <!-- Input and Submit Button (Fixed) -->
-        <div class="flex items-center mb-8" style="direction: ltr;">
+        <!-- Language and Dark Mode Toggle Buttons Under Logo -->
+        <div class="lang-dark-mode-buttons">
+            <button id="langToggle" class="find-lec-button p-2 rounded">Arabic</button>
+            <button id="darkModeToggle" class="find-lec-button p-2 rounded">Dark Mode</button>
+        </div>
+
+        <!-- Input and Submit Button -->
+        <div class="flex items-center mb-8">
             <input type="text" id="codeInput" placeholder="TYPE ROOM CODE" class="flex-grow p-2 rounded-l-full text-black">
             <button id="submitButton" class="find-lec-button p-2 rounded-r-full">Find My Lec.</button>
         </div>
@@ -184,7 +184,7 @@
             document.getElementById("title").innerText = translations[currentLang].title;
             document.getElementById("subtitle").innerText = translations[currentLang].subtitle;
             document.getElementById("buildingColorsTitle").innerText = translations[currentLang].buildingColorsTitle;
-            
+
             // Change building color names
             const colorList = document.getElementById("colorList").children;
             const translationsArray = buildingTranslations[currentLang];
