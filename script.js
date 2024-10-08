@@ -168,3 +168,59 @@ function findLocation() {
     // Display the result
     document.getElementById("result").innerHTML = result;
 }
+
+function changeToArabic() {
+    // Change the text content to Arabic
+    document.getElementById("title").textContent = "محدد المحاضرات من سبيد وعلي";
+    document.getElementById("subtitle").textContent = "لديك كود محاضرة أو معمل ولا تعرف مكانه؟ اكتب الكود هنا [جرب مع مسافات (J 301) أو بدون مسافات (J301)] ودع السحر يحدث.";
+    document.getElementById("submitButton").textContent = "ابحث عن المحاضرة";
+    document.getElementById("mapInfo").textContent = "الخريطة التفاعلية للجامعة قريباً! استخدم الخريطة الثابتة الآن.";
+    document.getElementById("buildingColorsTitle").textContent = "ألوان المباني";
+    document.getElementById("arabicButton").textContent = "العودة إلى الإنجليزية";
+
+    // Optionally change the placeholder for the input box
+    document.getElementById("codeInput").setAttribute("placeholder", "اكتب كود المحاضرة / المعمل هنا");
+
+    // Change the button function to switch back to English
+    document.getElementById("arabicButton").removeEventListener("click", changeToArabic);
+    document.getElementById("arabicButton").addEventListener("click", changeToEnglish);
+}
+
+function changeToEnglish() {
+    // Revert text content to English
+    document.getElementById("title").textContent = "SPEED & Ali's Lecture Finder";
+    document.getElementById("subtitle").textContent = "Got lecture / lab code and don't know where it is? Write the code down there with [Try with Spaces ( J 301 ) or with no Spaces ( J301) ] and let the magic happen.";
+    document.getElementById("submitButton").textContent = "Find My Lec.";
+    document.getElementById("mapInfo").textContent = "University Interactive Map Soon!, So Use the static one for now :D.";
+    document.getElementById("buildingColorsTitle").textContent = "Building Colors";
+    document.getElementById("arabicButton").textContent = "Change to Arabic";
+
+    // Optionally revert the placeholder for the input box
+    document.getElementById("codeInput").setAttribute("placeholder", "Type lecture / lab code here");
+
+    // Change the button function to switch back to Arabic
+    document.getElementById("arabicButton").removeEventListener("click", changeToEnglish);
+    document.getElementById("arabicButton").addEventListener("click", changeToArabic);
+}
+
+function findLocation() {
+    // Example logic to handle location finding based on input
+    const codeInput = document.getElementById("codeInput").value.toUpperCase();
+    let result = "";
+
+    switch(codeInput) {
+        case "A 101":
+        case "A101":
+            result = "Building A: Applied Health Sciences Technology";
+            break;
+        case "B 102":
+        case "B102":
+            result = "Building B: Physical Therapy";
+            break;
+        // Add more cases for different codes
+        default:
+            result = "Code not found. Please try again.";
+    }
+
+    document.getElementById("result").textContent = result;
+}
