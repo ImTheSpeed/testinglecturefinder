@@ -20,21 +20,26 @@
             font-weight: 700;
             align-items: center;
             margin-left: 20px; /* Adjust as needed for spacing */
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            justify-content: center; /* Center items */
         }
         .nav-links a {
             text-decoration: none;
             color: black; /* Changed text color to black */
             font-weight: bold;
+            text-align: center; /* Center text in links */
+            min-width: 100px; /* Minimum width for links for better touch target */
         }
         .header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 10px 30px; /* Reduced padding to make header smaller */
+            padding: 10px 20px; /* Reduced padding to make header smaller */
             border-bottom: 1px solid #E0E0E0;
             width: 100%; /* Full width */
             background-color: #ffffff; /* Match the header color */
             color: white;
+            flex-wrap: wrap; /* Allow the header to wrap on smaller screens */
         }
         .header img {
             height: 140px; /* Increased logo height */
@@ -127,6 +132,28 @@
         .search-container button {
             padding: 0.5rem; 
             border-radius: 0 50px 50px 0; 
+        }
+
+        /* Media queries for responsiveness */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column; /* Stack items vertically on small screens */
+                align-items: center; /* Center items */
+                padding: 10px; /* Adjust padding */
+            }
+            .nav-links {
+                justify-content: center; /* Center the links */
+                gap: 15px; /* Reduce gap for smaller screens */
+            }
+            .title {
+                font-size: 2rem; /* Adjust title size */
+            }
+            .subtitle, .result {
+                font-size: 0.9rem; /* Smaller font size */
+            }
+            .search-container input {
+                width: 120px; /* Smaller search input */
+            }
         }
     </style>
 </head>
