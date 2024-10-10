@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap'); /* Adding a smooth, bold font */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap'); 
         
         body {
             background-color: #F5F5F5; 
@@ -15,43 +15,43 @@
         }
         .nav-links {
             display: flex;
-            gap: 30px; /* Reduced gap to fit in smaller header */
-            font-family: 'Roboto', sans-serif; /* Smooth, bold font */
+            gap: 30px; 
+            font-family: 'Roboto', sans-serif; 
             font-weight: 700;
             align-items: center;
-            margin-left: 20px; /* Adjust as needed for spacing */
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
-            justify-content: center; /* Center items */
+            margin-left: 20px; 
+            flex-wrap: wrap; 
+            justify-content: center; 
         }
         .nav-links a {
             text-decoration: none;
-            color: black; /* Changed text color to black */
+            color: black; 
             font-weight: bold;
-            text-align: center; /* Center text in links */
-            min-width: 100px; /* Minimum width for links for better touch target */
+            text-align: center; 
+            min-width: 100px; 
         }
         .header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 10px 20px; /* Reduced padding to make header smaller */
+            padding: 10px 20px; 
             border-bottom: 1px solid #E0E0E0;
-            width: 100%; /* Full width */
-            background-color: #ffffff; /* Match the header color */
+            width: 100%;
+            background-color: #ffffff; 
             color: white;
-            flex-wrap: wrap; /* Allow the header to wrap on smaller screens */
+            flex-wrap: wrap; 
         }
         .header img {
-            height: 140px; /* Increased logo height */
-            width: auto; /* Maintain aspect ratio */
+            height: 140px; 
+            width: auto; 
         }
         .notice {
-            background-color: #00274d; /* Darker blue */
+            background-color: #00274d; 
             color: white;
             padding: 20px;
             text-align: center;
-            font-size: 1rem; /* Make the text a bit larger */
-            font-family: 'Roboto', sans-serif; /* Smooth, bold font */
+            font-size: 1rem; 
+            font-family: 'Roboto', sans-serif; 
             font-weight: 700;
             display: flex;
             flex-direction: column;
@@ -117,42 +117,42 @@
             padding: 0.25rem 0.5rem;
             border-radius: 4px;
         }
-        /* Small search bar and centering */
+       
         .search-container {
             display: flex;
             justify-content: center;
             margin-bottom: 2rem;
         }
         .search-container input {
-            width: 150px; /* Fixed width for around 7-8 letters */
+            width: 150px; 
             padding: 0.5rem; 
             border-radius: 50px 0 0 50px; 
-            text-align: center; /* Center the text inside the input */
+            text-align: center; 
         }
         .search-container button {
             padding: 0.5rem; 
             border-radius: 0 50px 50px 0; 
         }
 
-        /* Media queries for responsiveness */
+       
         @media (max-width: 768px) {
             .header {
-                flex-direction: column; /* Stack items vertically on small screens */
-                align-items: center; /* Center items */
-                padding: 10px; /* Adjust padding */
+                flex-direction: column; 
+                align-items: center; 
+                padding: 10px; 
             }
             .nav-links {
-                justify-content: center; /* Center the links */
-                gap: 15px; /* Reduce gap for smaller screens */
+                justify-content: center; 
+                gap: 15px; 
             }
             .title {
-                font-size: 2rem; /* Adjust title size */
+                font-size: 2rem; 
             }
             .subtitle, .result {
-                font-size: 0.9rem; /* Smaller font size */
+                font-size: 0.9rem; 
             }
             .search-container input {
-                width: 120px; /* Smaller search input */
+                width: 120px; 
             }
         }
     </style>
@@ -172,11 +172,11 @@
         </nav>
     </header>
     <div class="w-full max-w-2xl p-4">
-        <!-- New text line above the search bar -->
+
     <div class="text-center mb-2">
         <h2 class="font-bold text-xl"> مش كود المادة Roomابوس ايدك اكتب كود الـ </h2>
     </div>
-        <!-- Centered, smaller search bar -->
+      
         <div class="search-container">
             <input type="text" id="codeInput" placeholder="Type Room Code" class="text-black">
             <button id="submitButton" class="find-lec-button">FIND</button>
