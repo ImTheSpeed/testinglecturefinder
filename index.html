@@ -3,47 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find My Lecture - Galala University</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Speed's Lecture Locator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #F5F5F5; 
+            font-family: 'Arial', sans-serif;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px solid #E0E0E0;
+        }
+        .header img {
+            height: 50px;
+        }
+        .notice {
+            background-color: #2c5282;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+        .find-lec-button {
+            background-color: #38a169; 
+            color: white; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+            transition: background-color 0.3s, transform 0.2s; 
+        }
+        .find-lec-button:hover {
+            background-color: #2f855a; 
+            transform: translateY(-2px); 
+        }
+        .title {
+            font-size: 2.5rem; 
+            font-weight: bold; 
+            text-align: center; 
+            margin-bottom: 0.5rem; 
+        }
+        .subtitle {
+            font-size: 1rem; 
+            text-align: center; 
+            margin-bottom: 2rem; 
+            color: #4a5568; 
+        }
+        .result, .map-result {
+            font-size: 1.25rem; 
+            font-weight: bold; 
+            color: black; 
+            text-align: center; 
+            margin-top: 1rem; 
+            font-family: 'Verdana', sans-serif; 
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+        }
+        .custom-white {
+            background-color: #FFFFFF; 
+            border: 1px solid #E0E0E0; 
+        }
+        .instructions {
+            font-size: 1rem;
+            color: #333;
+            margin-top: 2rem;
+            padding: 1rem;
+            border: 1px solid #E0E0E0;
+            background-color: #FFFFFF;
+        }
+    </style>
 </head>
-<body>
-    <div class="header">
-        <img src="gu_logo.png" alt="Galala University Logo">
-        <nav>
-            <a href="index.html">Find My Lecture</a>
-            <a href="campus_map.html">GU Campus Map</a>
-            <a href="where_to_eat.html">Where to Eat</a>
-            <a href="https://sis.gu.edu.eg" target="_blank">Link to SIS</a>
-            <a href="send_suggestions.html">Send Suggestions / Feedback</a>
+<body class="flex flex-col items-center justify-center min-h-screen text-black">
+    <div class="notice">
+        Alpha Version Notice: This site is currently in its alpha stage of development. As we work to improve your experience, some features may be incomplete, and occasional errors might occur. We appreciate your understanding and welcome any feedback to help us enhance the platform. Thank you for your patience!
+    </div>
+    <header class="header">
+        <img src="https://i.imgur.com/ICKD7ny.png" alt="University Logo">
+        <div>SPEED'S PROJECTS</div>
+        <nav class="nav-links">
+            <a href="#">Find My Lecture</a>
+            <a href="#">GU Campus Map</a>
+            <a href="#">Where to Eat</a>
+            <a href="#">Link to SIS</a>
+            <a href="#">Send your Feedback</a>
         </nav>
-    </div>
-    
-    <div class="search-section">
-        <input id="codeInput" type="text" placeholder="Type Room Code">
-        <button onclick="findLocation()">Find</button>
-    </div>
-
-    <div class="result-display">
-        <p id="result">Your Room is at</p>
-        <div id="map">Your Room on map</div>
-    </div>
-
-    <div class="how-to-use">
-        <p>HOW TO USE ‘FIND MY LECTURE’:</p>
-        <p>This site only works with SIS ROOM CODE. First, get your room code from SIS or from campus / picture.</p>
-        <div class="example">
-            <p>SIS Example</p>
-            <div>
-                <span>9:00AM MAT 123 Lecture - Room: A104 LECTURE HALL 1</span>
-                <span>Room is A104</span>
-            </div>
-            <div>
-                <span>2:50PM MEC 11 Laboratory - Room: To be Announced</span>
-                <span>NO ROOM TO TYPE</span>
-            </div>
+    </header>
+    <div class="w-full max-w-2xl p-4">
+        <div class="flex items-center mb-8">
+            <input type="text" id="codeInput" placeholder="Type Room Code" class="flex-grow p-2 rounded-l-full text-black">
+            <button id="submitButton" class="find-lec-button p-2 rounded-r-full">FIND</button>
+        </div>
+        <div class="custom-white p-8 rounded-lg mb-8">
+            <div class="title">Your Room is at</div>
+            <span id="result" class="result"></span> 
+        </div>
+        <div class="custom-white p-8 rounded-lg mb-8">
+            <div class="title">Your Room on Map</div>
+            <a href="https://ibb.co/JQKFbzz"><img src="https://i.ibb.co/gV3FXDD/1.png" alt="Map" class="map-result" border="0"></a>
+        </div>
+        <div class="instructions">
+            <h2>How to use 'Find My Lecture'</h2>
+            <p>Enter the SIS room code in the search bar above. You can try with spaces (e.g., J 301) or without spaces (e.g., J301). Click the 'FIND' button to get the location details and see it on the map.</p>
         </div>
     </div>
-
-    <script src="script.js"></script>
+    <footer class="text-center mt-8 text-xs">
+        All Rights Reserved to Galala University, me, and Ali. Yes ME [SPEED THE CREATOR OF THIS, and the great idea from my pal Ali, we made this because we found out that a lot of freshmen can't save every building letter.]
+    </footer>
+    <script src="script.js?v=1.0"></script> 
+    <script>
+        document.getElementById("submitButton").addEventListener("click", findLocation);
+    </script>
 </body>
 </html>
