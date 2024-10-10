@@ -15,11 +15,11 @@
         }
         .nav-links {
             display: flex;
-            gap: 40px; /* Increased gap for better spacing */
+            gap: 30px; /* Reduced gap to fit in smaller header */
             font-family: 'Roboto', sans-serif; /* Smooth, bold font */
             font-weight: 700;
             align-items: center;
-            margin-left: 30px; /* Adjust as needed for spacing */
+            margin-left: 20px; /* Adjust as needed for spacing */
         }
         .nav-links a {
             text-decoration: none;
@@ -30,14 +30,14 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 20px 50px; /* Adjust padding for a bigger header */
+            padding: 10px 30px; /* Reduced padding to make header smaller */
             border-bottom: 1px solid #E0E0E0;
             width: 100%; /* Full width */
             background-color: #ffffff; /* Match the header color */
             color: white;
         }
         .header img {
-            height: 120px; /* Increased logo height */
+            height: 140px; /* Increased logo height */
             width: auto; /* Maintain aspect ratio */
         }
         .notice {
@@ -112,6 +112,22 @@
             padding: 0.25rem 0.5rem;
             border-radius: 4px;
         }
+        /* Small search bar and centering */
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        .search-container input {
+            width: 150px; /* Fixed width for around 7-8 letters */
+            padding: 0.5rem; 
+            border-radius: 50px 0 0 50px; 
+            text-align: center; /* Center the text inside the input */
+        }
+        .search-container button {
+            padding: 0.5rem; 
+            border-radius: 0 50px 50px 0; 
+        }
     </style>
 </head>
 <body class="flex flex-col items-center justify-center min-h-screen text-black">
@@ -129,9 +145,10 @@
         </nav>
     </header>
     <div class="w-full max-w-2xl p-4">
-        <div class="flex items-center mb-8">
-            <input type="text" id="codeInput" placeholder="Type Room Code" class="flex-grow p-2 rounded-l-full text-black">
-            <button id="submitButton" class="find-lec-button p-2 rounded-r-full">FIND</button>
+        <!-- Centered, smaller search bar -->
+        <div class="search-container">
+            <input type="text" id="codeInput" placeholder="Type Room Code" class="text-black">
+            <button id="submitButton" class="find-lec-button">FIND</button>
         </div>
         <div id="locationSection" class="custom-white p-8 rounded-lg mb-8" style="display: none;">
             <div class="title">Your Room is at</div>
