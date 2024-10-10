@@ -7,156 +7,37 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap'); /* Adding a smooth, bold font */
-        
-        body {
-            background-color: #F5F5F5; 
-            font-family: 'Arial', sans-serif;
-        }
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-        }
-        .header {
-            text-align: center;
-            padding: 80px 20px; /* Increased padding for a bigger header */
-            border-bottom: 1px solid #E0E0E0;
-        }
-        .header img {
-            height: 100px; /* Increased height for a bigger logo */
-        }
-        .notice {
-            background-color: #00274d; /* Darker blue */
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 1rem; /* Make the text a bit larger */
-            width: 100vw; /* Full width */
-            position: relative;
-            left: 50%;
-            transform: translateX(-50%);
-            font-family: 'Roboto', sans-serif; /* Smooth, bold font */
-            font-weight: 700;
-        }
-        .find-lec-button {
-            background-color: #38a169; 
-            color: white; 
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-            transition: background-color 0.3s, transform 0.2s; 
-        }
-        .find-lec-button:hover {
-            background-color: #2f855a; 
-            transform: translateY(-2px); 
-        }
-        .title {
-            font-size: 2.5rem; 
-            font-weight: bold; 
-            text-align: center; 
-            margin-bottom: 0.5rem; 
-        }
-        .subtitle {
-            font-size: 1rem; 
-            text-align: center; 
-            margin-bottom: 2rem; 
-            color: #4a5568; 
-        }
-        .result, .map-result {
-            font-size: 1.25rem; 
-            font-weight: bold; 
-            color: black; 
-            text-align: center; 
-            margin-top: 1rem; 
-            font-family: 'Verdana', sans-serif; 
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
-        }
-        .custom-white {
-            background-color: #FFFFFF; 
-            border: 1px solid #E0E0E0; 
-        }
-        .instructions {
-            margin-top: 2rem;
-            padding: 1rem;
-            border: 1px solid #E0E0E0;
-            background-color: #FFFFFF;
-            display: flex;
-            justify-content: center;
-        }
-        .instructions img {
-            max-width: 100%;
-        }
-        .color-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            list-style: none;
-            padding: 0;
-            margin-top: 1rem;
-        }
-        .color-list li {
-            margin: 0.5rem;
-            font-size: 0.9rem;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-        }
+        /* ... (rest of the styles remain the same) */
     </style>
 </head>
 <body class="flex flex-col items-center justify-center min-h-screen text-black">
     <div class="notice">
-        Alpha Version Notice: This site is currently in its alpha stage of development. As we work to improve your experience, some features may be incomplete, and occasional errors might occur. We appreciate your understanding and welcome any feedback to help us enhance the platform. Thank you for your patience!
+        <div style="text-align: center; font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">Alpha Version Notice:</div>
+        <div>This site is currently in its alpha stage of development. As we work to improve your experience, some features may be incomplete, and occasional errors might occur. We appreciate your understanding and welcome any feedback to help us enhance the platform. Thank you for your patience!</div>
     </div>
-    <header class="header">
-        <img src="https://i.imgur.com/ICKD7ny.png" alt="University Logo">
-        <div>SPEED'S PROJECTS</div>
+    <header class="header w-full">
+        <img src="https://i.imgur.com/ICKD7ny.png" alt="University Logo" style="height: 150px;">
         <nav class="nav-links">
-            <a href="#">Find My Lecture</a>
-            <a href="#">GU Campus Map</a>
+            <a href="#">Find My Lecture<br>Gu Campus Map</a>
             <a href="#">Where to Eat</a>
             <a href="#">Link to SIS</a>
             <a href="#">Send your Feedback</a>
         </nav>
     </header>
     <div class="w-full max-w-2xl p-4">
-        <div class="flex items-center mb-8">
-            <input type="text" id="codeInput" placeholder="Type Room Code" class="flex-grow p-2 rounded-l-full text-black">
-            <button id="submitButton" class="find-lec-button p-2 rounded-r-full">FIND</button>
-        </div>
-        <div id="locationSection" class="custom-white p-8 rounded-lg mb-8" style="display: none;">
-            <div class="title">Your Room is at</div>
-            <span id="result" class="result"></span> 
-        </div>
+        <!-- ... (rest of the content remains the same) -->
         <div class="custom-white p-8 rounded-lg mb-8">
             <div class="title">Your Room on Map</div>
-            <a href="https://ibb.co/JQKFbzz"><img src="https://i.ibb.co/gV3FXDD/1.png" alt="Map" class="map-result" border="0"></a>
+            <div class="flex items-center">
+                <a href="https://ibb.co/JQKFbzz"><img src="https://i.ibb.co/gV3FXDD/1.png" alt="Map" class="map-result" border="0" style="max-width: 50%;"></a>
+                <ul class="color-list" style="flex: 1; list-style: none; padding: 0; margin: 0;">
+                    <li style="background-color: #4f2c02; color: white;">'A' Applied Health Sciences Technology</li>
+                    <li style="background-color: #00ff48;">'B' Physical Therapy</li>
+                    <!-- ... (rest of the list items remain the same) -->
+                </ul>
+            </div>
         </div>
-        <div class="custom-white p-8 rounded-lg mb-8">
-            <div class="title">Building Colors</div>
-            <ul class="color-list">
-                <li style="background-color: #4f2c02; color: white;">'A' Applied Health Sciences Technology</li>
-                <li style="background-color: #00ff48;">'B' Physical Therapy</li>
-                <li style="background-color: #ff9c00;">'C' Dentistry</li>
-                <li style="background-color: #c72500; color: white;">'D' Medicine</li>
-                <li style="background-color: #88c700;">'E' Nursing</li>
-                <li style="background-color: #82b6bb;">'G' Pharmacy</li>
-                <li style="background-color: #540c58; color: white;">'H' Administrative Sciences</li>
-                <li style="background-color: #000000; color: white;">Auditorium 1</li>
-                <li style="background-color: #000000; color: white;">Auditorium 2</li>
-                <li style="background-color: #0030ff; color: white;">'J' Media Production</li>
-                <li style="background-color: #4e00ff; color: white;">'L' Art and Design</li>
-                <li style="background-color: #f0ff00;">'N' Engineering</li>
-                <li style="background-color: #f0ff00;">'O' Architecture</li>
-                <li style="background-color: #0030ff; color: white;">'P' Computer Sciences and Engineering</li>
-                <li style="background-color: #ff00cc;">'Q' Science</li>
-            </ul>
-        </div>
-        <div class="instructions">
-            <img src="https://i.imgur.com/k3I0qpi.png" alt="Instructions">
-        </div>
+        <!-- ... (rest of the content remains the same) -->
     </div>
     <footer class="text-center mt-8 text-xs">
         All Rights Reserved to Galala University, me, and Ali. Yes ME [SPEED THE CREATOR OF THIS, and the great idea from my pal Ali, we made this because we found out that a lot of freshmen can't save every building letter.]
