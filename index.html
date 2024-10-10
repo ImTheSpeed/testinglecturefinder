@@ -3,120 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Speed's Lecture Locator</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <style>
-        body {
-            background-color: #F5F5F5;
-            font-family: 'Arial', sans-serif;
-        }
-        .custom-white {
-            background-color: #FFFFFF;
-            border: 1px solid #E0E0E0;
-        }
-        .find-lec-button {
-            background-color: #38a169;
-            color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        .find-lec-button:hover {
-            background-color: #2f855a;
-            transform: translateY(-2px);
-        }
-        .title {
-            font-size: 2.5rem;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 0.5rem;
-        }
-        .subtitle {
-            font-size: 1rem;
-            text-align: center;
-            margin-bottom: 2rem;
-            color: #4a5568;
-        }
-        .result {
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: black;
-            text-align: center;
-            margin-top: 1rem;
-            font-family: 'Verdana', sans-serif;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .color-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            list-style: none;
-            padding: 0;
-            margin-top: 1rem;
-        }
-        .color-list li {
-            margin: 0.5rem;
-            font-size: 0.9rem;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-        }
-    </style>
+    <title>Find My Lecture - Galala University</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="flex flex-col items-center justify-center min-h-screen text-black">
-    <div class="w-full max-w-2xl p-4">
-        <div class="flex flex-col items-center mb-8">
-            <div class="title" id="title">SPEED & Ali's Lecture Finder</div>
-            <div class="subtitle" id="subtitle">Got lecture / lab code and don't know where it is? Write the code down there with [Try with Spaces ( J 301 ) or with no Spaces ( J301) ] and let the magic happen.</div>
-            <img src="https://www.egyptianeducation.com/ImageHandler.ashx?Id=14525&SS=ceddd09c14cae84267b064642c315f8b" alt="University Logo" class="h-20">
-            
-            <!-- Arabic Language Button -->
-            <button id="arabicButton" class="find-lec-button p-2 mt-4">Change to Arabic</button>
-        </div>
-        <div class="flex items-center mb-8">
-            <input type="text" id="codeInput" placeholder="Type lecture / lab code here" class="flex-grow p-2 rounded-l-full text-black">
-            <button id="submitButton" class="find-lec-button p-2 rounded-r-full">Find My Lec.</button>
-        </div>
-        <div class="custom-white p-8 rounded-lg mb-8">
-            <span id="result" class="result"></span>
-        </div>
-        <div class="text-center mb-8">
-            <p id="mapInfo">University Interactive Map Soon!, So Use the static one for now :D.</p>
-        </div>
-        <div class="custom-white p-8 rounded-lg text-center">
-            <a href="https://ibb.co/JQKFbzz">
-                <img src="https://i.ibb.co/gV3FXDD/1.png" alt="Map" border="0" />
-            </a>
-        </div>
+<body>
+    <div class="header">
+        <img src="gu_logo.png" alt="Galala University Logo">
+        <nav>
+            <a href="index.html">Find My Lecture</a>
+            <a href="campus_map.html">GU Campus Map</a>
+            <a href="where_to_eat.html">Where to Eat</a>
+            <a href="https://sis.gu.edu.eg" target="_blank">Link to SIS</a>
+            <a href="send_suggestions.html">Send Suggestions / Feedback</a>
+        </nav>
+    </div>
+    
+    <div class="search-section">
+        <input id="codeInput" type="text" placeholder="Type Room Code">
+        <button onclick="findLocation()">Find</button>
+    </div>
 
-        <div class="text-center mt-8">
-            <h2 id="buildingColorsTitle" class="font-bold text-lg">Building Colors</h2>
-            <ul class="color-list">
-                <li style="background-color: #4f2c02; color: white;">'A' Applied Health Sciences Technology</li>
-                <li style="background-color: #00ff48;">'B' Physical Therapy</li>
-                <li style="background-color: #ff9c00;">'C' Dentistry</li>
-                <li style="background-color: #c72500; color: white;">'D' Medicine</li>
-                <li style="background-color: #88c700;">'E' Nursing</li>
-                <li style="background-color: #82b6bb;">'G' Pharmacy</li>
-                <li style="background-color: #540c58; color: white;">'H' Administrative Sciences</li>
-                <li style="background-color: #000000; color: white;">Auditorium 1</li>
-                <li style="background-color: #000000; color: white;">Auditorium 2</li>
-                <li style="background-color: #0030ff; color: white;">'J' Media Production</li>
-                <li style="background-color: #4e00ff; color: white;">'L' Art and Design</li>
-                <li style="background-color: #f0ff00;">'N' Engineering</li>
-                <li style="background-color: #f0ff00;">'O' Architecture</li>
-                <li style="background-color: #0030ff; color: white;">'P' Computer Sciences and Engineering</li>
-                <li style="background-color: #ff00cc;">'Q' Science</li>
-            </ul>
+    <div class="result-display">
+        <p id="result">Your Room is at</p>
+        <div id="map">Your Room on map</div>
+    </div>
+
+    <div class="how-to-use">
+        <p>HOW TO USE ‘FIND MY LECTURE’:</p>
+        <p>This site only works with SIS ROOM CODE. First, get your room code from SIS or from campus / picture.</p>
+        <div class="example">
+            <p>SIS Example</p>
+            <div>
+                <span>9:00AM MAT 123 Lecture - Room: A104 LECTURE HALL 1</span>
+                <span>Room is A104</span>
+            </div>
+            <div>
+                <span>2:50PM MEC 11 Laboratory - Room: To be Announced</span>
+                <span>NO ROOM TO TYPE</span>
+            </div>
         </div>
     </div>
-    <footer class="text-center mt-8 text-xs">
-        All Rights Reserved to Galala University, me, and Ali. Yes ME [SPEED THE CREATOR OF THIS, and the great idea from my pal Ali, we made this because we found out that a lot of freshmen can't save every building letter.]
-    </footer>
-    <script src="script.js?v=1.0"></script>
-    <script>
-        document.getElementById("submitButton").addEventListener("click", findLocation);
-        document.getElementById("arabicButton").addEventListener("click", changeToArabic);
-    </script>
+
+    <script src="script.js"></script>
 </body>
 </html>
