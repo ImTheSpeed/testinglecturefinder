@@ -1,0 +1,91 @@
+/* General Layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.custom-header {
+    background-color: #ff5555; /* Customize the color of the header */
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+}
+
+/* Main content area */
+.main-content {
+    display: flex;
+    flex: 1;
+}
+
+/* Sidebar (Blue marked area) */
+.sidebar {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-item {
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+.sidebar-item.red {
+    background-color: red;
+}
+
+.sidebar-item.blue {
+    background-color: blue;
+}
+
+.sidebar-item.green {
+    background-color: green;
+}
+
+.sidebar-item.purple {
+    background-color: purple;
+}
+
+.sidebar-item.orange {
+    background-color: orange;
+}
+
+.sidebar-item:hover {
+    opacity: 0.8;
+}
+
+/* Content Display Area (Green marked area) */
+.content-display {
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.content-display img {
+    max-width: 100%;
+    height: auto;
+}
+
+.content-display iframe {
+    width: 80%;
+    height: 500px;
+    border: none;
+}
+
+.content-display p {
+    font-size: 18px;
+    text-align: center;
+}
