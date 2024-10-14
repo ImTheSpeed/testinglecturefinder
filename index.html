@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Sidebar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Area (Red marked area) -->
+    <header class="custom-header">
+        <h1>Your Custom Header</h1>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Sidebar Area (Blue marked area) -->
+        <div class="sidebar">
+            <div class="sidebar-item red" onclick="showContent('content1')">(05)</div>
+            <div class="sidebar-item blue" onclick="showContent('content2')">(08)</div>
+            <div class="sidebar-item green" onclick="showContent('content3')">(10)</div>
+            <div class="sidebar-item purple" onclick="showContent('content4')">(12)</div>
+            <div class="sidebar-item orange" onclick="showContent('content5')">(15)</div>
+        </div>
+
+        <!-- Content Display Area (Green marked area) -->
+        <div id="content-display" class="content-display">
+            <!-- This is where the content will be displayed -->
+            <p>Select an option from the sidebar to view content.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
